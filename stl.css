@@ -11,25 +11,6 @@ body {
 pre {
     text-align: left;
 }
-img.ico {
-    height: 1em;
-    width: auto;
-    position: relative;
-}
-.halfcolumn {
-  width: 50%;
-  float: left;
-}
-.container:after {
-  content: "";
-  display: table;
-  clear: both;
-}
 br.xxg {
     line-height: 3em;
-}
-img.halfwidth {
-  width: 50%;
-  height: auto;
-  margin-bottom: 3em;
 }
