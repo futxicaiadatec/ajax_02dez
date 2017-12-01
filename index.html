@@ -1,0 +1,46 @@
+<!DOCTYPE "html">
+<html lang="pt-br">
+    <head>
+        <meta charset="utf-8">
+        <title>index</title>
+
+        <link rel="preload" href="stl.css" as="style">
+        <link rel="stylesheet" href="stl.css" type="text/css" async>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <h1>Web Server 200 OK!</h1>
+        <div class="container">
+            <div class="halfcolumn">
+                <p>Nós iremos configurar seu ambiente de produção de código, o pré-requisito é o <img class="ico" src="chrome.jpg"></img>, licke no item a segui:</p>
+                <p><a href="https://chrome.google.com/webstore/detail/web-server-for-chrome/ofhbbkphhbklhfoeikjpcbhemlocgigb">web-server-for-chrome</a></p>
+                <p>Instale e execute o app!</p>
+                <p>Este aplicativo serve o conteúdo de alguma pasta local à sua escolha como se fosse um site</p>
+                <p>Marcado a opção "acessível na rede local", outros computadores do laboratório poderão ver o diretório compartilhado</p>
+                <p>Também é possível habilitar para que os visitantes do seu servidor consigam fazer upload para a sua pasta. Ou seja, fazendo um ajax POST com jsons estes serão salvos na pasta do seu computador</p>
+                <p>Cuidado, não há autenticação! Seu diretório está aberto pra escrita anônima.</p>
+                <br class="xxg">
+                <h3>Faça o download de tudo isto <a href="tudoisto.zip">aqui</a></h3>
+            </div>
+            <div class="halfcolumn">
+                <img src="webserver.png">
+            </div>
+        </div>
+        <h1>Dev Tools</h1>
+        <p>O chrome também pode ser usado para o desenvolvimento de aplicações web, debaixo de capô ele possui várias ferramentas que podem auxiliar na edição e depuração do código. Aperte F12!</p>
+        <p>Há muitas facilidade a serem exploradas ai, um guia completo pode ser encontrado neste <a href="https://developers.google.com/web/tools/chrome-devtools/?hl=pt-br">link.</a></p>
+        <p>Algo muito útil é adicionar uma pasta de trabalho no devtools e mapear os arquivos nos recursos de rede, assim o navegador sincroniza o que está sendo editado com esta pasta. Utilizado com o servidor estático, as alterações salvas voltam ao navegador após um reflesh :)</p>
+        <p>Vá na aba "sources" no devtools e depois siga as imagens</p>
+        <img class="halfwidth" src="addfolder.png">
+        <br>
+        <img class="halfwidth" src="maptoresource.png">
+        <br>
+        <h1>Playground</h1>
+        <p>Na próxima página iremos começar a brincar com javascript assíncrono, use o próprio console do navegador pra executar os código e manusear o DOM de exemplor</p>
+        <p><a href="01.html">01.html</a></p>
+        <p><a href="des01.html">des01.html</a></p>
+        <p><a href="02.html">02.html</a></p>
+        <p><a href="des02.html">des02.html</a></p>
+    </body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE "html">
+<html lang="pt-br">
+    <head>
+        <meta charset="utf-8">
+        <title>desafio 01</title>
+        <link rel="preload" href="stl.css" as="style">
+        <link rel="stylesheet" href="stl.css" type="text/css" async>
+        <link rel="preload" href="highlight.pack.js" as="script">
+        <link rel="stylesheet" href="highlight.css" type="text/css" async>
+        <script src="highlight.pack.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <h1>Obter Dados</h1>
+          <p>Abra este <a href="https://pt.wikipedia.org/wiki/Lista_de_munic%C3%ADpios_de_Mato_Grosso_por_popula%C3%A7%C3%A3o" target="_blank">link</a> e o terminal nele.</p>
+          <p>Crie um script que colete todos as informação da tabela num array.</p>
+<pre><code class="javascript">// Dica de javascript
+var arr = []
+
+var table = document.getElementsByTagName('tbody')[0].rows
+
+// itera sobre as linhas i
+for(let i=0; i&lt;table.length; i++){
+  var row = table[i].cells
+  var cellsText = []
+
+  // itera sobre as céluas j da linha i
+  for(let j=0; j&lt;row.length; j++){
+    cellsText.push(row[j].innerText)
+  }
+
+  arr.push(cellsText)
+}
+
+console.log(JSON.stringify(arr,null,2))
+</code></pre>
+    <hr>
+    <br class="xxg">
+    <h1>Download e Upload</h1>
+    <p>Ainda na wikipedia, execute o código para baixar o array:</p>
+<pre><code class="javascript">// cria um elemto oculto
+var a = document.createElement("a")
+document.body.appendChild(a)
+a.style = "display: none"
+
+// inventa ula URL interna para o array
+var blob = new Blob([JSON.stringify( arr, null,4)], {type: "application/json"})
+var url = window.URL.createObjectURL(blob)
+
+// clica no link
+a.href = url
+a.download = "matogrosso.json"
+a.click()
+
+window.URL.revokeObjectURL(url)
+</code></pre>
+    <br class="xxg">
+    <p>O botão abaixo carrega um documento do sistema de arquivos.</p>
+    <input id="inputfile" type="file" required accept=".json">
+
+<pre><code class="javascript">// Dica de javascript
+document.getElementById("inputfile").onchange = e =&gt; {
+var file = e.srcElement.files[0]
+
+  var reader = new FileReader()
+
+  reader.onload = ee =&gt; {
+    json = JSON.parse(ee.target.result)
+    console.dir(json)
+  }
+
+  reader.readAsText(e.srcElement.files[0])
+}
+</code></pre>
+    <hr>
+    <br class="xxg">
+    <h1>Statística</h1>
+    <p>Com o array carregado nesta página, calcule a mediana e a média.</p>
+    <p>Crie outro array contendo a diferença da população entre dois anos, depois ordene este array em função deste valores.</p>
+    <p>Mostre estes dados numa tabela abaixo:</p>
+    </body>
+</html>
