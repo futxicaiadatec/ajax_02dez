@@ -1,0 +1,4 @@
+div.mdl-card__media > img {
+    width: auto;
+    max-width: 100%;
+}
