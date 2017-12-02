@@ -1,0 +1,48 @@
+<!DOCTYPE "html">
+<html lang="pt-br">
+    <head>
+        <meta charset="utf-8">
+        <title>04</title>
+        <link rel="preload" href="stl.css" as="style">
+        <link rel="stylesheet" href="stl.css" type="text/css" async>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preload" href="highlight.pack.js" as="script">
+        <link rel="stylesheet" href="highlight.css" type="text/css" async>
+        <script src="highlight.pack.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+    </head>
+    <body>
+        <h1>Habilitar PUT</h1>
+        <p>Não é permitido utilizar requisições de upload quando se carrega o html diretamente do HD, para contornar isto usamos o servidor estático 200OK</p>
+        <p>Os arquivos dropados no servidor serão salvos no diretório que contém os arquivos web. É possível permitir que outros computadores acessem o teu servidor, assim outras pessoas conseguem enviar arquivos</p>
+        <p>ATENÇÃO, não existe autenticação. É possível deletar ou sobreescrever os arquivos originais, inclusive o indes.html</p>
+        <img src="allowfileupload.png">
+        <hr>
+        <h1>GET</h1>
+<pre><code class="javascript">var ajax = new XMLHttpRequest()
+ajax.open("GET", "404.html", true)
+ajax.onload = e => {
+    console.dir(e)
+}
+ajax.send()
+</code></pre>
+    <hr>
+    <h1>POST</h1>
+<pre><code class="javascript">var ajax = new XMLHttpRequest()
+ajax.open("PUT", "ips/" + document.getElementById('inputnome').value + ".json", true)
+ajax.onload = e => {
+    console.dir(e)
+}
+ajax.send(JSON.stringify({
+    nome: document.getElementById('inputnome').value,
+    ip: document.getElementById('inputip').value
+},null,4))
+</code></pre>
+    <form>
+        <input id="inputnome" type=text placeholder="nome">
+        <br>
+        <input id="inputip" type="text" placeholder="ip"
+    </form>
+    <br class="xxg">
+    </body>
+</html>
